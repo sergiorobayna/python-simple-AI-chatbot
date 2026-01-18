@@ -1,0 +1,74 @@
+:root {
+  --background: #fdfaf7;
+  --foreground: #0f172a;
+  --primary: #ffc085;
+  --primary-foreground: #060613;
+  --secondary: #f6f1ec;
+  --muted: #f6f2f0;
+  --muted-foreground: #64748b;
+  --border: #f2ede9;
+  --ring: #ffc085;
+}
+
+.dark {
+  --background: #060613;
+  --foreground: #f6f9fe;
+  --primary: #ffc085;
+  --primary-foreground: #060613;
+  --secondary: #151529;
+  --muted: #151529;
+  --muted-foreground: #94a3b8;
+  --border: #1b1b31;
+  --ring: #4040bf;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--background), 0.8;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsla(var(--border), 0.4);
+}
+
+.chat-main {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  scroll-behavior: smooth;
+}
+
+.footer {
+  flex-shrink: 0;
+  background-color: hsla(var(--background), 0.8);
+  backdrop-filter: blur(12px);
+  padding-top: 1rem;
+}
