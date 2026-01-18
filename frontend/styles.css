@@ -53,9 +53,45 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  background-color: var(--background), 0.8;
+  background-color: color-mix(in srgb, var(--background), transparent 20%);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid hsla(var(--border), 0.4);
+  border-bottom: 1px solid color-mix(in srgb, var(--border), transparent 60%);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: color-mix(in srgb, var(--primary), transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-shape {
+  width: 1.7rem;
+  height: 1.7rem;
+  background-color: var(--primary); 
+  -webkit-mask-image: url('assets/icon.svg');
+  mask-image: url('assets/icon.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.header h1 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 .chat-main {
@@ -68,7 +104,7 @@ body {
 
 .footer {
   flex-shrink: 0;
-  background-color: hsla(var(--background), 0.8);
+  background-color: var(--background);
   backdrop-filter: blur(12px);
   padding-top: 1rem;
 }
