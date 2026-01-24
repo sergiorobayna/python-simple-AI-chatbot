@@ -401,6 +401,7 @@ body {
   outline: none;
   resize: none;
   padding: 0.75rem 1rem;
+  max-width: 41rem;
   max-height: 120px;
   min-height: 52px;
   font-family: inherit;
