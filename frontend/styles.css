@@ -1,13 +1,22 @@
 :root {
-  --background: #fdfaf7;
-  --foreground: #0f172a;
-  --primary: #ffc085;
-  --primary-foreground: #060613;
-  --secondary: #f6f1ec;
-  --muted: #f6f2f0;
-  --muted-foreground: #64748b;
-  --border: #f2ede9;
-  --ring: #ffc085;
+  /* Fondo principal: Un blanco roto muy suave, no puro */
+  --background: #fdfcfb; 
+  /* Texto principal: Casi negro para máxima legibilidad */
+  --foreground: #1a1512; 
+  /* Color de marca: Un ámbar/bronce vibrante */
+  --primary: #d97706; 
+  /* Texto sobre botones primarios: Blanco */
+  --primary-foreground: #ffffff; 
+  /* Burbujas y elementos secundarios: Un beige muy suave */
+  --secondary: #f0e4d8;
+  /* Fondos sutiles (ej. mensajes del asistente) */
+  --muted: #f7f2ed; 
+  /* Texto secundario: Gris amarronado para que no compita con el negro */
+  --muted-foreground: #110f0d; 
+  /* Bordes: Más oscuros que el fondo para dar estructura */
+  --border: #d4a373; 
+  /* Enfoque/Anillos: El color primario suavizado */
+  --ring: #d97706;
 }
 
 .dark {
@@ -139,14 +148,22 @@ body {
   width: 1.4rem;
   height: 1.4rem;
   background-color: var(--muted-foreground);
-  -webkit-mask-image: url('assets/sun-icon.svg');
-  mask-image: url('assets/sun-icon.svg');
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
   mask-position: center;
+}
+
+.theme-shape.sun {
+  -webkit-mask-image: url('assets/sun-icon.svg');
+  mask-image: url('assets/sun-icon.svg');
+}
+
+.theme-shape.moon {
+  -webkit-mask-image: url('assets/moon-icon.svg');
+  mask-image: url('assets/moon-icon.svg');
 }
 
 .theme-shape:hover {
@@ -218,6 +235,10 @@ body {
   background-color: color-mix(in srgb, var(--muted), transparent 70%);
 }
 
+.message-item.user {
+  background-color: color-mix(in srgb, var(--muted), transparent 40%);
+}
+
 .message-content-wrapper {
   display: flex;
   max-width: 48rem;
@@ -242,13 +263,13 @@ body {
 }
 
 .assistant-avatar {
-  background: color-mix(in srgb, var(--primary), transparent 80%);
+  background: color-mix(in srgb, var(--primary), transparent 60%);
 }
 
 .assistant-avatar-shape {
   width: 1.4rem;
   height: 1.4rem;
-  background: var(--primary-foreground);
+  background: var(--foreground);
   -webkit-mask-image: url('assets/sparkles-icon.svg');
   mask-image: url('assets/sparkles-icon.svg');
   -webkit-mask-size: contain;
@@ -430,7 +451,7 @@ body {
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: color-mix(in srgb, var(--muted-foreground), transparent 40%);
+  color: color-mix(in srgb, var(--muted-foreground), transparent 30%);
 }
 
 ::-webkit-scrollbar {
