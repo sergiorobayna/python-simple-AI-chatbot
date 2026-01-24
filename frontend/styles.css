@@ -77,7 +77,7 @@ body {
 .icon-shape {
   width: 1.7rem;
   height: 1.7rem;
-  background-color: var(--primary); 
+  background-color: var(--primary);
   -webkit-mask-image: url('assets/branding-icon.svg');
   mask-image: url('assets/branding-icon.svg');
   -webkit-mask-size: contain;
@@ -208,6 +208,133 @@ body {
   width: 100%;
 }
 
+.message-item {
+  padding: 1.5rem 1rem;
+  display: flex;
+  width: 100%;
+}
+
+.message-item.assistant {
+  background-color: color-mix(in srgb, var(--muted), transparent 70%);
+}
+
+.message-content-wrapper {
+  display: flex;
+  max-width: 48rem;
+  margin: 0 auto;
+  width: 100%;
+  gap: 1rem;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.user-avatar {
+  background-color: var(--secondary);
+}
+
+.assistant-avatar {
+  background: color-mix(in srgb, var(--primary), transparent 80%);
+}
+
+.assistant-avatar-shape {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--primary-foreground);
+  -webkit-mask-image: url('assets/sparkles-icon.svg');
+  mask-image: url('assets/sparkles-icon.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.user-avatar-shape {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: color-mix(in srgb, var(--foreground), transparent 20%);
+  -webkit-mask-image: url('assets/user-icon.svg');
+  mask-image: url('assets/user-icon.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.message-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--foreground), transparent 10%);
+  word-break: break-word;
+}
+
+.thinking-container {
+  padding: 1rem 1rem 2rem;
+  display: flex;
+  max-width: 48rem;
+  margin: 0 auto;
+  width: 100%;
+  gap: 1rem;
+}
+
+.thinking-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  height: 1.5rem;
+}
+
+.thinking-indicator span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  margin-right: 0.5rem;
+}
+
+.dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  background-color: var(--primary);
+  border-radius: 9999px;
+  opacity: 0.5;
+  animation: pulse 0.8s infinite ease-in-out;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.dot:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
+
 .footer {
   flex-shrink: 0;
   background-color: var(--background);
@@ -286,7 +413,7 @@ body {
   width: 40px;
   height: 40px;
   transform: scale(1.10);
-  background-color: var(--primary); 
+  background-color: var(--primary);
   -webkit-mask-image: url('assets/send-icon.svg');
   mask-image: url('assets/send-icon.svg');
   -webkit-mask-size: contain;
@@ -309,13 +436,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: color-mix(in srgb, var(--muted-foreground), transparent 80%);
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: color-mix(in srgb, var(--muted-foreground), transparent 60%);
 }
