@@ -94,6 +94,65 @@ body {
   letter-spacing: -0.025em;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background-color: color-mix(in srgb, var(--muted), transparent 50%);
+}
+
+.trash-shape {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: var(--muted-foreground);
+  -webkit-mask-image: url('assets/trash-icon.svg');
+  mask-image: url('assets/trash-icon.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.trash-shape:hover {
+  background-color: var(--foreground);
+}
+
+.theme-shape {
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: var(--muted-foreground);
+  -webkit-mask-image: url('assets/sun-icon.svg');
+  mask-image: url('assets/sun-icon.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.theme-shape:hover {
+  background-color: var(--foreground);
+}
+
 .chat-main {
   flex: 1;
   overflow-y: auto;
